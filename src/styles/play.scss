@@ -1,0 +1,119 @@
+@import './global.scss';
+@import './variables.scss';
+@import './mixins';
+
+.game-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.instructions {
+    font-size: 1.25rem;
+    text-align: center;
+    margin: 0 1.25em;
+
+    &::before {
+        content: "Swipe";
+        position: relative;
+        margin-right: 0.35em;
+
+        @include respond-to("small") {
+            content: "Click";
+        }
+    }
+
+    @include respond-to("small") {
+        font-size: 2.25rem;
+    }
+}
+
+.code-snippet {
+    font-size: 0.75rem;
+    margin: 1em;
+    background: #DDD7D5;
+    color: #303332;
+    border-radius: 0.25em;
+    padding: .45em;
+    box-shadow: 0px 14px 25px #8C8C8C;
+}
+
+.pulseChevron {
+    animation: pulse 3s infinite;
+    font-size: 2rem;
+
+    @include respond-to("small") {
+        display: none;
+    }
+}
+
+@keyframes pulse {
+    0% {
+      color: $tech-green; 
+    }
+    100% {
+        color: black;
+    }
+}
+
+.main-game {
+    font-size: 1.2rem;
+    border-radius: 20px;
+    box-shadow: 0px 14px 25px $tech-green;
+    padding: 1.25em;
+    max-width: 7em;
+    min-width: 7em;
+    text-align: center;
+    margin: 0 1.25em;
+
+    @include respond-to("small") {
+        font-size: 3rem;
+    }
+
+    &.slidingLeft {
+      transform: translate(-30em, 0);
+      transition: 1s;
+    }
+
+    &.slidingRight {
+      transform: translate(30em, 0);
+      transition: 1s;
+    }
+}
+
+.ip-address {
+    text-align: center;
+}
+
+.top-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 85.5%;
+    @include large-font;
+    padding-right: 0.35em;
+}
+
+.score-mobile {
+    font-size: 1.5rem;
+
+    @include respond-to("small") {
+        display: none;
+    }
+}
+
+.swipe-arrows {
+    justify-content: space-between;
+    flex-direction: row;
+    width: 77.5%;
+    display: none;
+
+    @include respond-to("small") {
+        display: flex;
+        font-size: 3rem;
+    }
+
+    @include respond-to("medium") {
+        font-size: 4rem;
+    }
+}
