@@ -30,7 +30,7 @@ const Play = () => {
   return (
     <Layout>
       <div className="code-snippet">
-         <CodeSnippet code={lists[0]} />
+         <CodeSnippet code={lists[4]} />
       </div>
       <div role="button" aria-label="public or private" className="swipe-arrows">
         <div className="left-arrow" onClick={handleLeftArrowClick}>
