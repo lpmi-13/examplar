@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import Reacte from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import Layout from './Layout';
 import CodeSnippet from './CodeSnippet';
@@ -10,17 +10,10 @@ import data from '../data/results.json';
 const lists = data['lists'];
 console.log(lists.length)
 
-// so the feedback on errors stays around a bit longer
-const PAUSE_LENGTH = 1500;
-const ERROR_PAUSE_LENGTH = 3000;
-
-const handleOpenModal = () => {};
 const handleLeftArrowClick = () => {};
 const handleRightArrowClick = () => {};
-const showStuff = () => {};
 
 const Play = () => {
-  const [active, setActive] = useState(false);
 
   // let's swipe if the user is on a phone!
   //const onSwipedLeft = () => handleLeftArrowClick();
