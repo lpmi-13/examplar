@@ -2,6 +2,20 @@
 @import './mixins.scss';
 @import './variables.scss';
 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
 .container {
     color: $tech-green;
     font-weight: bold;
@@ -9,9 +23,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: 85vh;
+    // height: 85vh;
     width: 100vw;
-    overflow: hidden;
+    overflow-x: hidden;
+
 
     @include respond-to("small") {
         height: 95vh;

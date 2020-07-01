@@ -1,0 +1,14 @@
+@import './global.scss';
+@import './variables.scss';
+@import './mixins';
+
+.type-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.type-link {
+    margin: 0.5em 0;
+}

@@ -29,11 +29,19 @@
 }
 
 .code-content {
+    flex-grow: 2;
+}
+
+.code-line {
     background: white;
+    white-space: pre-wrap;
 }
 
 .code-snippet {
-    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    // min-height: 35%;
+    font-size: 0.4rem;
     width: 50em;
     margin: 1em;
     background: #DDD7D5;
@@ -41,6 +49,26 @@
     border-radius: 0.25em;
     padding: 3em;
     box-shadow: 0px 14px 25px #8C8C8C;
+
+    @include respond-to("small") {
+        font-size: 0.85rem;
+    }
+
+    &.slidingLeft {
+      opacity: 0;
+      transition: 1s;
+    }
+
+    &.slidingRight {
+      opacity: 0;
+      transition: 1s;
+    }
+}
+
+.github-link {
+    text-decoration: none;
+    color: black;
+    margin-bottom: 1em;
 }
 
 .pulseChevron {
@@ -58,52 +86,6 @@
     }
     100% {
         color: black;
-    }
-}
-
-.main-game {
-    font-size: 1.2rem;
-    border-radius: 20px;
-    box-shadow: 0px 14px 25px $tech-green;
-    padding: 1.25em;
-    max-width: 7em;
-    min-width: 7em;
-    text-align: center;
-    margin: 0 1.25em;
-
-    @include respond-to("small") {
-        font-size: 3rem;
-    }
-
-    &.slidingLeft {
-      transform: translate(-30em, 0);
-      transition: 1s;
-    }
-
-    &.slidingRight {
-      transform: translate(30em, 0);
-      transition: 1s;
-    }
-}
-
-.ip-address {
-    text-align: center;
-}
-
-.top-icons {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 85.5%;
-    @include large-font;
-    padding-right: 0.35em;
-}
-
-.score-mobile {
-    font-size: 1.5rem;
-
-    @include respond-to("small") {
-        display: none;
     }
 }
 
