@@ -1,17 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 
 import SplashScreen from './components/SplashScreen';
 import Play from './components/Play';
 import Layout from './components/Layout';
+import GiveMeJson from './components/GiveMeJson';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
    <Router>
      <Layout>
-       <Route exact path="/" component={SplashScreen} />
-       <Route path="/:type" component={Play} />
+       <Switch>
+         <Route exact path="/" component={SplashScreen} />
+         <Route exact path="/json" component={GiveMeJson} />
+         <Route path="/:type" component={Play} />
+       </Switch>
      </Layout>
    </Router> 
    , document.getElementById('root')

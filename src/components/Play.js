@@ -12,6 +12,7 @@ const PAUSE_LENGTH = 1500;
 
 const Play = (props) => {
 
+  // used to grab the "type" from the path...this seemed cleaner than having a bunch of different Route components in index.js
   const { type } = props.match.params;
   const snippets = data[type];
 
