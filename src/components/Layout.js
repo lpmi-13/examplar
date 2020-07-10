@@ -3,7 +3,7 @@ import '../styles/layout.scss';
 
 const Layout = ({ children }) => {
   return (
-    <div role="main" className="container">
+    <div role="main">
       {children}
     </div>
   )

@@ -21,7 +21,7 @@ const CodeSnippet = props => {
            </a>
            <div className="code-content">
                {lines.map(({ line_content, line_number }) => {
-                   return <div key={line_number} className="code-line">{line_number < 10 ? `  ${line_number}` : line_number}|{line_content}</div>
+                   return <pre key={line_number} className="code-line">{line_number < 10 ? ` ${line_number}` : line_number}|{line_content}</pre>
                    }
                )}
            </div>

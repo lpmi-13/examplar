@@ -2,53 +2,31 @@
 @import './variables.scss';
 @import './mixins';
 
-.game-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.instructions {
-    font-size: 1.25rem;
-    text-align: center;
-    margin: 0 1.25em;
-
-    &::before {
-        content: "Swipe";
-        position: relative;
-        margin-right: 0.35em;
-
-        @include respond-to("small") {
-            content: "Click";
-        }
-    }
-
-    @include respond-to("small") {
-        font-size: 2.25rem;
-    }
-}
-
 .code-content {
-    flex-grow: 2;
+    // flex-grow: 2;
+    overflow: auto;
 }
 
 .code-line {
     background: white;
-    white-space: pre-wrap;
+    // white-space: pre-wrap;
+    display: table-row;
+    // margin: 0;
+    // overflow: auto;
 }
 
 .code-snippet {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
     // min-height: 35%;
-    font-size: 0.4rem;
-    width: 50em;
-    margin: 1em;
-    background: #DDD7D5;
-    color: #303332;
-    border-radius: 0.25em;
-    padding: 3em;
-    box-shadow: 0px 14px 25px #8C8C8C;
+    // font-size: 0.4rem;
+    // max-width: 30em;
+    // margin: 1em;
+    // background: #DDD7D5;
+    // color: #303332;
+    // border-radius: 0.25em;
+    // padding: 3em;
+    // box-shadow: 0px 14px 25px #8C8C8C;
 
     @include respond-to("small") {
         font-size: 0.85rem;
@@ -68,7 +46,7 @@
 .github-link {
     text-decoration: none;
     color: black;
-    margin-bottom: 1em;
+    // margin-bottom: 1em;
 }
 
 .pulseChevron {
@@ -92,7 +70,7 @@
 .swipe-arrows {
     justify-content: space-between;
     flex-direction: row;
-    width: 77.5%;
+    // width: 77.5%;
     display: none;
 
     @include respond-to("small") {

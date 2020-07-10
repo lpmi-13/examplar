@@ -2,14 +2,6 @@
 @import './mixins.scss';
 @import './variables.scss';
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -19,16 +11,19 @@ code {
 .container {
     color: $tech-green;
     font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: space-evenly;
     // height: 85vh;
-    width: 100vw;
-    overflow-x: hidden;
+    // width: 70vw;
+    // overflow: hidden;
+    // margin: 1em;
+    // width: 100vw;
+    // overflow-x: hidden;
 
 
     @include respond-to("small") {
-        height: 95vh;
+        // height: 95vh;
     }
 }
