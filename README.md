@@ -34,7 +34,7 @@ This current project is an attempt to showcase the very minimal possibilities of
 - list comprehensions
 - functions
 
-When viewing a particular code snippet example, there's a like that will go directly to where it's located in the original github source.
+When viewing a particular code snippet example, there's a link that will go directly to where it's located in the original github source.
 
 ## Running locally
 

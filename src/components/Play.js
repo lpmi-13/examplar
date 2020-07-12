@@ -21,21 +21,17 @@ const Play = (props) => {
 
   const [listIndex, setListIndex] = useState(0)
   const [list, setList] = useState(snippets[listIndex])
-  // sliding isn't what we're currently doing, so update/rename this later
-  const [isSlidingLeft, setIsSlidingLeft] = useState(false);
-  const [isSlidingRight, setIsSlidingRight] = useState(false);
+  const [isUpdating, setIsUpdating] = useState(false);
 
-  
   useEffect(() => {
-    setIsSlidingLeft(false);
-    setIsSlidingRight(false);
+    setIsUpdating(false);
     setList(snippets[listIndex])
   }, [listIndex, snippets])
 
 
   // move back in the set of code snippets
   const handleLeftArrowClick = () => {
-    setIsSlidingLeft(true);
+    setIsUpdating(true);
     // move back one, unless we're at the beginning, then go to the last item
     const indexToMoveTo = listIndex <= 0 ? snippetLength - 1 : listIndex - 1;
     setTimeout(() => setListIndex(indexToMoveTo), PAUSE_LENGTH);
@@ -43,14 +39,10 @@ const Play = (props) => {
 
   // move forward in the set of code snippets
   const handleRightArrowClick = () => {
-    setIsSlidingRight(true);
+    setIsUpdating(true);
     // move forward one, unless we're at the end, then go to the first item
     const indexToMoveTo = listIndex >= snippetLength - 1 ? 0 : listIndex + 1; 
     setTimeout(() => setListIndex(indexToMoveTo), PAUSE_LENGTH);
-  }
-
-  const returnHome = () => {
-
   }
 
   const {
@@ -63,7 +55,7 @@ const Play = (props) => {
 
   return (
     <Fragment>
-      <div className="home-screen" onClick={returnHome}>
+      <div className="home-screen" >
         <Link to={"/"}>go back home</Link>
       </div>
       <div className="info-wrapper">
@@ -85,7 +77,7 @@ const Play = (props) => {
           </div>
         </div>
       </div>
-      <div className={`code-snippet ${isSlidingRight ? 'slidingRight' : ''} ${isSlidingLeft ? 'slidingLeft' : ''}`} >
+      <div className={`code-snippet ${isUpdating ? 'updating' : ''}`} >
         <CodeSnippet lines={lines} />
       </div>
     </Fragment>
