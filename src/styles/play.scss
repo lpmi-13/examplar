@@ -3,9 +3,13 @@
 @import './mixins';
 
 .code-content {
-    font-size: 1.5rem;
+    font-size: 0.85rem;
     overflow: auto;
     padding: 1em 0;
+
+    @include respond-to("small") {
+        font-size: 1.5rem;
+    }
 }
 
 .code-line {

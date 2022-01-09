@@ -1,5 +1,5 @@
-import React, { Fragment, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -11,10 +11,12 @@ import '../styles/play.scss';
 
 const PAUSE_LENGTH = 1000;
 
-const Play = (props) => {
+const Play = () => {
+
+  const params = useParams();
 
   // used to grab the "type" from the path...this seemed cleaner than having a bunch of different Route components in index.js
-  const { type } = props.match.params;
+  const { type } = params;
   const snippets = data[type];
 
   const snippetLength = snippets.length;
@@ -54,7 +56,7 @@ const Play = (props) => {
   } = JSON.parse(list);
 
   return (
-    <Fragment>
+    <>
       <div className="home-screen" >
         <Link to={"/"}>go back home</Link>
       </div>
@@ -80,7 +82,7 @@ const Play = (props) => {
       <div className={`code-snippet ${isUpdating ? 'updating' : ''}`} >
         <CodeSnippet lines={lines} />
       </div>
-    </Fragment>
+    </>
   )
 }
 

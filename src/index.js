@@ -1,27 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { render }from 'react-dom';
 
 import SplashScreen from './components/SplashScreen';
 import Play from './components/Play';
 import Layout from './components/Layout';
-import GiveMeJson from './components/GiveMeJson';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
+render(
    <Router>
      <Layout>
-       <Switch>
-         <Route exact path="/" component={SplashScreen} />
-         <Route exact path="/json" component={GiveMeJson} />
-         <Route path="/:type" component={Play} />
-       </Switch>
+       <Routes>
+         <Route exact path="/" element={<SplashScreen/>} />
+         <Route path="/:type" element={<Play path="/:type" />} />
+       </Routes>
      </Layout>
    </Router> 
    , document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
