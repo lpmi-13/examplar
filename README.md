@@ -36,6 +36,8 @@ This current project is an attempt to showcase the very minimal possibilities of
 
 When viewing a particular code snippet example, there's a link that will go directly to where it's located in the original github source.
 
+The data is created with https://github.com/lpmi-13/python-code-corpus, and I'd eventually like to have other languages included in the exercises.
+
 ## Running locally
 
 ```
